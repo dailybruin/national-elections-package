@@ -6,9 +6,10 @@ import Footer from './components/Footer';
 
 function App() {
   const [ data, setData ] = useState(null);
+  const [landingDisplayed, setLandingDisplayed] = useState(false);
   
   useEffect(() => {
-		fetch("<TODO: insert api url here>")
+		fetch("https://kerckhoff.dailybruin.com/api/packages/flatpages/national-elections")
 		.then(res => res.json())
 		.then(res => setData(res.data['article.aml']))
   }, [])

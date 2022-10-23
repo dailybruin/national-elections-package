@@ -9,7 +9,7 @@ const DBHeader = styled("div")`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background: black;
+  background-color: #434343;
   width: 100%;
   padding: 0.2em 0;
   color: white;

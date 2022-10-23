@@ -9,11 +9,12 @@ import { mediaQueries } from '../shared/config';
 
 
 const Container = styled.div`
-	background-color: black;
+	background-color: #EDE8E5;
 	height: auto;
-	color: white;
+	color: #434343;
 	padding: 60px 0 10px 0;
-    text-align: center;
+  text-align: center;
+  
 	h1 {
 		margin: 0;
 		font-family: 'Times New Roman', Times, serif;
@@ -23,11 +24,10 @@ const Container = styled.div`
 `
 
 const Socials = styled.div`
-    position: relative;
+  position: relative;
 	margin-top: 20px;
   
 	img {
-
     position: relative;
 		margin: 0 20px;
 	}
