@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
 import Banner from './components/Banner';
+import Graphics from './components/Graphics';
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -21,8 +22,9 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Landing image={data.landing_image} credits={data.landing_credits}/>
-      <Banner text={data.description}/>
+        <Landing image={data.landing_image} credits={data.landing_credits}/>
+        <Banner text={data.description}/>
+        <Graphics text={data.graphic_title} graphic={data.graphic}/>
       <Footer/>
     </div>
   );
