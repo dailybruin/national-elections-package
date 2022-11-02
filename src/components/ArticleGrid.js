@@ -4,15 +4,21 @@ import { mediaQueries } from "../shared/config";
 
 import Card from "./ArticleCard";
 
+
 const Container = styled.div`
+    max-width: 100vw;
+    position: relative;
+    overflow: hidden;
+`
+
+const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 1em;
-  column-gap: 1em;
   margin: auto;
-  max-width: 80%;
-  align-items: center;
-  justify-content: center;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 3em;
+  column-gap: 2em;
+  
   ${mediaQueries.mobile} {
     display: flex;
     flex-direction: column;
@@ -25,19 +31,21 @@ const Container = styled.div`
 export default function ArticleGrid(props) {
   return (
     <Container>
-      {props && props.articles
-        ? props.articles.map((item) => {
-            return (
-                <Card
-                  article_title={item.article_title}
-                  article_byline={item.article_byline}
-                  article_image={item.article_image}
-                  article_url={item.article_url}
-                  color={item.color}
-                />
-              );
-          })
-        : null}
+        <Grid>  
+            {props && props.articles
+                ? props.articles.map((item) => {
+                    return (
+                        <Card
+                        article_title={item.article_title}
+                        article_byline={item.article_byline}
+                        article_image={item.article_image}
+                        article_url={item.article_url}
+                        color={item.color}
+                    />
+                    );
+                })
+            : null}
+        </Grid>
     </Container>
   );
 }

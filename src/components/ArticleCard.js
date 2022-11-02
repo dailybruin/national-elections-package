@@ -15,23 +15,22 @@ const Image = styled.img`
 
 const Title = styled.a`
     display: block;
-    font-family: 'Courier Prime', monospace;
+    padding-top: 1em;
     font-size: 20px;
     font-weight: 600;
-    line-height: 1em;
     text-align: center;   
     text-decoration: none;
     color: inherit;
 `
 
 //TODO: figure out why ByLine color doesn't change unless color: inherit is used
-const ByLine = styled.div`
+const ByLine = styled.p`
     display: block;
-    font-family: 'Courier Prime', monospace;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1em;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 1em;
     text-align: center;
+    font-style: italic;
     color: inherit;
 `
 
@@ -49,9 +48,11 @@ export default function ArticleCard(props)
 
     const Container = styled.div`
         max-width: 325px;
+        margin: auto;
+        box-sizing: content-box;
         background-color: #${getBackground(props.color)};
         height: fit-content;
-        padding: 1.5em 1em 1.5em 1em;
+        padding: 1em;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
         ${mediaQueries.mobile} {
@@ -60,13 +61,15 @@ export default function ArticleCard(props)
     `
 
     const ArticleInfo = styled.div`
-        width: 303px;
-        background-color: #${getTextBackground(props.color)};
-        color: #706A61;
-        height: fit-content;
         display: block;
         margin: auto;
-
+        width: 303px;
+        height: fit-content;
+        background-color: #${getTextBackground(props.color)};
+        color: #706A61;
+        font-family: 'Spectral', serif;
+        line-height: 1em;
+        
         ${mediaQueries.mobile} {
             width: 100%;
         }
@@ -76,8 +79,8 @@ export default function ArticleCard(props)
         <Container>
             <a href={props.article_url}><Image src={props.article_image}/></a>
             <ArticleInfo>
-                <ByLine> By {props.article_byline}</ByLine>
                 <Title href={props.article_url}>{props.article_title}</Title>
+                <ByLine> By {props.article_byline}</ByLine>
             </ArticleInfo>
         </Container>
     )
