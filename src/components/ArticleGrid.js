@@ -4,11 +4,15 @@ import { mediaQueries } from "../shared/config";
 
 import Card from "./ArticleCard";
 
+const OuterContainer = styled.div`
+  width: 100%;
+  overflow: visible;
+`
 
 const Container = styled.div`
     max-width: 100vw;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     margin-top: 5em;
     margin-bottom: 10em;
 `
@@ -20,6 +24,8 @@ const Grid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   row-gap: 3em;
   column-gap: 2em;
+  overflow: visible;
+  padding: 2em;
   
   ${mediaQueries.mobile} {
     display: flex;
@@ -32,22 +38,24 @@ const Grid = styled.div`
 
 export default function ArticleGrid(props) {
   return (
-    <Container>
-        <Grid>  
-            {props && props.articles
-                ? props.articles.map((item) => {
-                    return (
-                        <Card
-                        article_title={item.article_title}
-                        article_byline={item.article_byline}
-                        article_image={item.article_image}
-                        article_url={item.article_url}
-                        color={item.color}
-                    />
-                    );
-                })
-            : null}
-        </Grid>
-    </Container>
+    <OuterContainer>
+      <Container>
+          <Grid>  
+              {props && props.articles
+                  ? props.articles.map((item) => {
+                      return (
+                          <Card
+                          article_title={item.article_title}
+                          article_byline={item.article_byline}
+                          article_image={item.article_image}
+                          article_url={item.article_url}
+                          color={item.color}
+                      />
+                      );
+                  })
+              : null}
+          </Grid>
+      </Container>
+    </OuterContainer>
   );
 }

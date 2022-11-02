@@ -8,11 +8,10 @@ import PictureFrame from '../images/Corners.svg';
 const Frame = styled.img`
     position: absolute;
     z-index: 30;
+    top: 0;
     left: 0;
-    bottom: 0;
-    width: 400px;
-    margin-left: -2em;
-    margin-bottom: -2em;
+    width: 120%;
+    height: 120%;
 `
 
 const Image = styled.img`
@@ -60,12 +59,13 @@ export default function ArticleCard(props)
 
     const Container = styled.div`
         position: relative;
-        max-width: 325px;
+        /* max-width: 325px; */
         margin: auto;
         box-sizing: content-box;
         background-color: #${getBackground(props.color)};
-        height: fit-content;
+        /* height: fit-content; */
         padding: 1em;
+        overflow: visible;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
         ${mediaQueries.mobile} {
@@ -76,8 +76,8 @@ export default function ArticleCard(props)
     const ArticleInfo = styled.div`
         display: block;
         margin: auto;
-        width: 303px;
-        height: fit-content;
+        /* width: 303px; */
+        /* height: fit-content; */
         background-color: #${getTextBackground(props.color)};
         color: #706A61;
         font-family: 'Spectral', serif;
