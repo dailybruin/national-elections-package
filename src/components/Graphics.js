@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Title = styled.div`
   font-family: 'Spectral', serif;
-  font-size: 36px;
+  font-size: 3.5em;
   font-weight: 600;
   color: #706A61;
   ${mediaQueries.mobile} {
@@ -47,7 +47,7 @@ export default function Graphics(props) {
         </Divider>
 
         <Container>
-            <img style={{"width": "60%", "margin-top": "15px"}} src={props.graphic}/>
+            <img style={{"width": "80%", "margin-top": "2em"}} src={props.graphic}/>
         </Container>
     </>
     );

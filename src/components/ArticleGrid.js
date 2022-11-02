@@ -5,7 +5,7 @@ import { mediaQueries } from "../shared/config";
 import Card from "./ArticleCard";
 
 const OuterContainer = styled.div`
-  width: 100%;
+  max-width: 100vw;
   overflow: visible;
 `
 
@@ -22,15 +22,15 @@ const Grid = styled.div`
   margin: auto;
   width: 80%;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 3em;
-  column-gap: 2em;
+  row-gap: 5em;
+  column-gap: 4em;
   overflow: visible;
   padding: 2em;
   
   ${mediaQueries.mobile} {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 90vw;
     margin: auto;
     align-items: center;
   }

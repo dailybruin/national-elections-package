@@ -16,7 +16,7 @@ const Container = styled.div`
 const Text = styled.div`
   position: absolute;
   font-family: 'Spectral', serif;
-  font-size: 26px;
+  font-size: 2em;
   font-weight: 300;
   max-width: 60%;
   color: black;

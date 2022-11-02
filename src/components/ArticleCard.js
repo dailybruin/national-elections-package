@@ -5,18 +5,19 @@ import { mediaQueries } from '../shared/config';
 import PictureFrame from '../images/Corners.svg';
 
 
-const Frame = styled.img`
-    position: absolute;
-    z-index: 30;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 120%;
-`
+// const Frame = styled.img`
+//     position: absolute;
+//     z-index: 30;
+//     top: 0;
+//     left: 0;
+//     width: 120%;
+//     height: 120%;
+// `
 
 const Image = styled.img`
     display: block;
     width: 303px;
+    max-width: 100%;
     height: 290px;
     margin: auto;
     box-sizing: content-box;
@@ -69,7 +70,7 @@ export default function ArticleCard(props)
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
         ${mediaQueries.mobile} {
-            width: 100%;
+            width: 80%;
         }
     `
 
@@ -90,7 +91,7 @@ export default function ArticleCard(props)
 
     return (
         <Container>
-            <Frame src={PictureFrame}/>
+            {/* <Frame src={PictureFrame}/> */}
             <a href={props.article_url}><Image src={props.article_image}/></a>
             <ArticleInfo>
                 <Title href={props.article_url}>{props.article_title}</Title>
