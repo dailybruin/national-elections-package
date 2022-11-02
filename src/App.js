@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ArticleGrid from './components/ArticleGrid';
 
 function App() {
   const [ data, setData ] = useState(null);
@@ -14,10 +15,13 @@ function App() {
 		.then(res => setData(res.data['article.aml']))
   }, [])
 
-  return (
+  data && console.log(data)
+
+  return data && (
     <div className="App">
       <Header/>
-      Hello Daily Bruin!
+        {/* <Landing image={data.landing_image} credits={data.landing_credits} setLandingDisplayed={setLandingDisplayed}/> */}
+        <ArticleGrid articles={data.stories} />
       <Footer/>
     </div>
   );
