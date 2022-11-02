@@ -9,6 +9,8 @@ const Container = styled.div`
     max-width: 100vw;
     position: relative;
     overflow: hidden;
+    margin-top: 5em;
+    margin-bottom: 10em;
 `
 
 const Grid = styled.div`

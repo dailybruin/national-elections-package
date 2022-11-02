@@ -2,6 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { mediaQueries } from '../shared/config';
 
+import PictureFrame from '../images/Corners.svg';
+
+
+const Frame = styled.img`
+    position: absolute;
+    z-index: 30;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    margin-left: -2em;
+    margin-bottom: -2em;
+`
 
 const Image = styled.img`
     display: block;
@@ -10,7 +22,7 @@ const Image = styled.img`
     margin: auto;
     box-sizing: content-box;
     object-fit: cover;
-    z-index: 12;
+    z-index: 10;
 `
 
 const Title = styled.a`
@@ -47,6 +59,7 @@ export default function ArticleCard(props)
     }
 
     const Container = styled.div`
+        position: relative;
         max-width: 325px;
         margin: auto;
         box-sizing: content-box;
@@ -77,6 +90,7 @@ export default function ArticleCard(props)
 
     return (
         <Container>
+            <Frame src={PictureFrame}/>
             <a href={props.article_url}><Image src={props.article_image}/></a>
             <ArticleInfo>
                 <Title href={props.article_url}>{props.article_title}</Title>
