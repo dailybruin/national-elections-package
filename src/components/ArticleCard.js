@@ -2,17 +2,45 @@ import React from 'react';
 import styled from 'styled-components';
 import { mediaQueries } from '../shared/config';
 
-import PictureFrame from '../images/Corners.svg';
+import TopLeft from '../images/topLeft.svg';
+import TopRight from '../images/topRight.svg';
+import bottomLeft from '../images/bottomLeft.svg';
+import bottomRight from '../images/bottomRight.svg';
 
 
-// const Frame = styled.img`
-//     position: absolute;
-//     z-index: 30;
-//     top: 0;
-//     left: 0;
-//     width: 120%;
-//     height: 120%;
-// `
+const Frame1 = styled.img`
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+`
+const Frame2 = styled.img`
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    right: 0;
+    margin-right: -10px;
+    margin-top: -10px;
+`
+const Frame3 = styled.img`
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    left: 0;
+    margin-left: -10px;
+    margin-bottom: -10px;
+`
+const Frame4 = styled.img`
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    right: 0;
+    margin-right: -10px;
+    margin-bottom: -10px;
+`
+
 
 const Image = styled.img`
     display: block;
@@ -91,7 +119,10 @@ export default function ArticleCard(props)
 
     return (
         <Container>
-            {/* <Frame src={PictureFrame}/> */}
+            <Frame1 src={TopLeft}/>
+            <Frame2 src={TopRight}/>
+            <Frame3 src={bottomLeft}/>
+            <Frame4 src={bottomRight}/>
             <a href={props.article_url}><Image src={props.article_image}/></a>
             <ArticleInfo>
                 <Title href={props.article_url}>{props.article_title}</Title>

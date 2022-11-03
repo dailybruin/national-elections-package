@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
-
+import LeftDivider from "../images/Leftdivider.svg";
+import RightDivider from "../images/Rightdivider.svg";
 import Card from "./ArticleCard";
 
 const OuterContainer = styled.div`
@@ -26,7 +27,7 @@ const Grid = styled.div`
   column-gap: 4em;
   overflow: visible;
   padding: 2em;
-  
+
   ${mediaQueries.mobile} {
     display: flex;
     flex-direction: column;
@@ -36,8 +37,36 @@ const Grid = styled.div`
   }
 `;
 
+const Divider = styled.div`
+  width: 100%;
+  height: fit-content;
+  background-color: #EDE8E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Title = styled.div`
+  font-family: 'Spectral', serif;
+  font-size: 3.5em;
+  font-weight: 600;
+  color: #706A61;
+  ${mediaQueries.mobile} {
+    font-size: 20px;
+    max-width: 80%;
+  }
+`;
+
 export default function ArticleGrid(props) {
   return (
+  <>
+    <Divider>
+        <img style={{"width": "20%", "float":"left"}} src={LeftDivider}/>
+            <Title>{props.text}</Title>
+        <img style={{"width": "20%", "float":"right"}} src={RightDivider}/> 
+    </Divider>
+
     <OuterContainer>
       <Container>
           <Grid>  
@@ -57,5 +86,6 @@ export default function ArticleGrid(props) {
           </Grid>
       </Container>
     </OuterContainer>
+  </>
   );
 }

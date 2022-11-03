@@ -28,7 +28,7 @@ const Title = styled.div`
 
 const Divider = styled.div`
   width: 100%;
-  height: 100px;
+  height: fit-content;
   background-color: #EDE8E5;
   display: flex;
   flex-direction: row;
@@ -47,7 +47,7 @@ export default function Graphics(props) {
         </Divider>
 
         <Container>
-            <img style={{"width": "80%", "margin-top": "2em"}} src={props.graphic}/>
+            <img style={{"width": "80%", "margin-top": "5em", "margin-bottom": "5em", "border": "5px dashed #706A61"}} src={props.graphic}/>
         </Container>
     </>
     );
