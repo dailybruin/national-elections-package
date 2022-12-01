@@ -25,7 +25,7 @@ function App() {
       <Header/>
         <Landing image={data.landing_image} credits={data.landing_credits}/>
         <Banner text={data.description}/>
-        <Graphics text={data.graphic_title} graphic={data.graphic}/>
+        {/* <Graphics text={data.graphic_title} graphic={data.graphic}/> */}
         <ArticleGrid articles={data.stories} text={data.story_title}/>
       <Footer/>
     </div>
